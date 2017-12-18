@@ -11,6 +11,7 @@ export default config => {
     entry: config.format === 'iife' ? 'src/browser.js' : 'src/index.js',
     format: config.format,
     moduleName: config.format === 'iife' ? 'window' : 'nlmapsOL',
+    extend: config.format === 'iife' ? true : false,
     dest: config.dest,
     plugins: [
       commonjs(),

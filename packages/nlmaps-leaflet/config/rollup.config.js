@@ -11,9 +11,10 @@ export default config => {
     input: config.format === 'iife' ? 'src/browser.js' : 'src/index.js',
     output: {
       format: config.format,
-      file: config.dest
+      file: config.dest,
+      name: config.format === 'iife' ? 'window' : 'nlmapsL'
     },
-    name: config.format === 'iife' ? 'window' : 'nlmapsL',
+    extend: config.format === 'iife' ? true : false,
     plugins: [
       commonjs(),
       resolve({

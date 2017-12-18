@@ -16,6 +16,7 @@ export default config => {
       format: config.format,
     },
     external: config.external,
+    extend: config.format === 'iife' ? true : false,
     plugins: [
       commonjs(),
       resolve({

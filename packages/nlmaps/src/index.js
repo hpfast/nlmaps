@@ -2,25 +2,26 @@
 import { bgLayer as bgL, 
          overlayLayer as overlayL, 
          markerLayer as markerL, 
-         geoLocatorControl as glL } from '../../nlmaps-leaflet/build/nlmaps-leaflet.cjs.js';
+         getMapCenter as centerL,
+         geocoderControl as geocoderL,
+         geoLocatorControl as glL } from 'nlmaps-leaflet';
 
 import { bgLayer as bgOL, 
          overlayLayer as overlayOL, 
-         geoLocatorControl as glO } from '../../nlmaps-openlayers/build/nlmaps-openlayers.cjs.js';
+         markerLayer as markerOL, 
+         getMapCenter as centerOL,
+         geocoderControl as geocoderOL,
+         geoLocatorControl as glO } from 'nlmaps-openlayers';
 
 import { bgLayer as bgGM, 
          overlayLayer as overlayGM, 
-         geoLocatorControl as glG } from '../../nlmaps-googlemaps/build/nlmaps-googlemaps.cjs.js';
-// import { bgLayer as bgL, geoLocatorControl as glL } from 'nlmaps-leaflet';
+         markerLayer as markerGM, 
+         getMapCenter as centerGM,
+         geocoderControl as geocoderGM, 
+         geoLocatorControl as glG } from 'nlmaps-googlemaps';
 
-// import { bgLayer as bgOL, 
-//          geoLocatorControl as glO } from 'nlmaps-openlayers';
-
-// import { bgLayer as bgGM, 
-//          geoLocatorControl as glG } from 'nlmaps-googlemaps';
-
-import { getProvider } from '../../lib/index.js';
-import geoLocator from '../../nlmaps-geolocator/src/index.js';
+import { getProvider, geocoder } from '../../lib/index.js';
+import geoLocator from 'nlmaps-geolocator';
 
 let nlmaps = {
   leaflet: {

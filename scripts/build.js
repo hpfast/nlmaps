@@ -4,6 +4,8 @@ const helpers = require('./helpers');
 const { spawn } = require('child_process')
 
 const tasks = helpers.tasks();
+console.log('hooooo')
+console.log(tasks)
 
 const rollup_args = ['-c', 'config/rollup.all.js'];
 
@@ -15,6 +17,7 @@ if (helpers.args.watch) {
 //run each package's rollup command from the package's directory
 //and capture/log output
 tasks.forEach(task => {
+  console.log(rollup_args)
   const build = spawn('rollup', rollup_args, {cwd: 'packages/' + helpers.packagePath(task)});
 
   build.stdout.on('data', (data) => {

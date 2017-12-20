@@ -1,6 +1,8 @@
 const conf = require('./conf.json');
 const ArgumentParser = require('argparse').ArgumentParser;
 
+console.log('what are the argvars?')
+console.log(process.argv)
 const parser = new ArgumentParser({
   version: '0.0.1',
   addHelp:true,
@@ -34,7 +36,11 @@ function determineTaskList(packages) {
 }
 
 function isRegisteredTask(arg) {
-  return conf.packages.includes(arg) 
+  const flag = conf.packages.includes(arg);
+  if (!flag) {
+    console.log('WARNING: a package name (' + arg +') was provided which is not specified in scripts/conf.json. Ignoring it.')
+  }
+  return flag;
 }
 
 function packagePath(name){

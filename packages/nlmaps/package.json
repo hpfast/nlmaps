@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "live-server-https": "0.0.2",
+    "rollup": "^0.52.3",
     "tape": "^4.6.3"
   },
   "bugs": {
